@@ -17,7 +17,7 @@ jobs:
       - name: run the API tests
         run: |
           unzip assets.zip
-          pip3 install setuptools>=42.0.0 wheel
+          pip3 install setuptools>=42.0.0 wheel scikit-build
           pip3 install tensorflow==1.14.0
           pip3 install -r requirements.txt
           pip3 install pytest
