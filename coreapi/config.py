@@ -1,2 +1,2 @@
-CONFIG = {'model_dir': '../corebreakout/assets/models',
-          'weights_path': '../corebreakout/assets/models/mask_rcnn_coco.h5'}
+CONFIG = {'model_dir': './assets/models',
+          'weights_path': './assets/models/mask_rcnn_coco.h5'}
