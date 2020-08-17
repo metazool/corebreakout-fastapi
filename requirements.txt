@@ -1,4 +1,4 @@
-corebreakout
+git+https://github.com/rgmyr/corebreakout.git
 fastapi
 mrcnn
 numpy
