@@ -11,7 +11,8 @@ from corebreakout import CoreSegmenter
 from coreapi.config import CONFIG
 
 # By default, models from corebreakout's assets.zip
-MODEL = CoreSegmenter(**CONFIG)
+def load_model():
+    return CoreSegmenter(**CONFIG)
 
 app = FastAPI()
 
@@ -37,7 +38,7 @@ async def core_labels(images: Instances):
         labels.append(segment_image(instance))
 
 
-def segment_image(instance: Instance):
+def segment_image(instance: Instance, model=load_model()):
     image_bytes = base64.decodebytes(instance['image_bytes']['b64'].encode())
     image_arr = np.array(Image.open(io.BytesIO(image_bytes)))
-    return MODEL.segment(image_arr)
+    return model.segment(image_arr)
