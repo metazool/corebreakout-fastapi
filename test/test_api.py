@@ -38,4 +38,4 @@ def test_labels(image_bytes):
     response = client.post("/labels", json=body)
 
     assert response.status_code == 200
-    assert response.json() == {"msg": "Hello World"}
+    assert response.json()["masks"]
