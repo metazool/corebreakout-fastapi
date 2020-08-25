@@ -39,6 +39,6 @@ async def core_labels(images: Instances):
 
 
 def segment_image(instance: Instance, model=load_model()):
-    image_bytes = base64.decodebytes(instance['image_bytes']['b64'].encode())
+    image_bytes = base64.decodebytes(instance[1][0].input_bytes.b64.encode())
     image_arr = np.array(Image.open(io.BytesIO(image_bytes)))
     return model.segment(image_arr)
